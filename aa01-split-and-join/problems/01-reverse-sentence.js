@@ -10,15 +10,22 @@ among characters.
 */
 
 function reverseSentence(senetence) {
-
+    //chop up the sentence
     let splitSent = senetence.split(" ");
-    let returnSent = [];   for (i = splitSent.length - 1; i > -1; i--) {
-        returnSent.unshift(splitSent[i]);
+    
+    //empty array for sentence in it's final form
+    let returnSent = [];   
+    
+    //push all the chopped words to the array in reverse order
+    for (i = splitSent.length - 1; i > -1; i--) {
+        returnSent.push(splitSent[i]);
     }
-    return returnSent;
+    //smush the individual word elements into a sentence in the final array
+    let mergeSent = returnSent.join(" ");
 
+    //send me the final result. 
+    return mergeSent;
 }
-
 
 console.log(reverseSentence('I am pretty hungry')); // 'hungry pretty am I'
 console.log(reverseSentence('follow the yellow brick road')); // 'road brick yellow the follow'
